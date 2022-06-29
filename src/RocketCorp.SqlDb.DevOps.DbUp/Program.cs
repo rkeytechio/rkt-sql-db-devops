@@ -33,10 +33,12 @@ if (result.Successful)
 {
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("Success!");
+    return 0;
 }
 else
 {
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine(result.Error);
     Console.WriteLine("Failed!");
+    return -1;
 }
