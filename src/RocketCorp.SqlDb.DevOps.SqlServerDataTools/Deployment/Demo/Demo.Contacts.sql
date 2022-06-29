@@ -19,5 +19,11 @@ BEGIN
     VALUES (3, N'Ash', N'Oliver', 1, 1)
 END
 
+IF NOT EXISTS (SELECT * FROM [RocketCorp].[Contacts] WHERE [Id] = 4)
+BEGIN
+    INSERT [RocketCorp].[Contacts] ([Id], [FirstName], [LastName], [IsActive], [DepartmentId])
+    VALUES (4, N'Scott', N'Duffy', 0, 2)
+END
+
 SET IDENTITY_INSERT [RocketCorp].[Contacts] OFF
 GO
